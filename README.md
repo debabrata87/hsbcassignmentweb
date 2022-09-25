@@ -42,6 +42,8 @@ HSBC Multi currency Payment application with Web interface
 # Data Setup and Confiuration :
 
   1- data.sql file on resource folder contains currency and the initial balance along with exchange rate  [ as in 22/09/2022 corresponding to USD ] which will be displayed as initial balance
+  
+  2- Default port of Spring boot web application is 8080 but this can be overridden by activating and changing the value of [ server.port=8089 i.e. 8089 or any chosen value available ] property in application.properties
 
 # Build:
 
