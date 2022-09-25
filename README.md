@@ -58,3 +58,5 @@ HSBC Multi currency Payment application with Web interface
   java -jar hsbcassignmentweb-0.0.1-SNAPSHOT.jar
   
 # Known Issues:
+
+  White Label Error Page issue is occuring if the first transaction is invalid like Payment non numeric . It is handled with Thymeleaf handling of error. Page will be redirected to a error page and can be navigated back to Home page again 
