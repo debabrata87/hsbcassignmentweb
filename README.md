@@ -1,16 +1,16 @@
 # HSBC Multi Currency Payment App
 HSBC Multi currency Payment application with Web interface
 
-High Level Requirement :
+# High Level Requirement :
 
   Web application to display Multi Currency Balance and Accept Payment and display Balance After processing Payment
   
 
-GIT URL 
+# GIT URL 
   
   -
 
-Tools Used for development 
+# Tools Used for development 
 
   1- STS 
   
@@ -18,15 +18,15 @@ Tools Used for development
   
   3- Springboot
 
-Application Type:
+# Application Type:
   
   Spring boot Web Appliction
 
-Build Tool:
+# Build Tool:
 
   Maven 3.8.6
 
-Depenency :
+# Depenency :
 
    1- Spring boot Web application 
    2- H2 
@@ -35,20 +35,20 @@ Depenency :
    5- HTML
    
 
-Data Setup and Confiuration :
+# Data Setup and Confiuration :
 
   1- data.sql file on resource folder contains currency and the initial balance along with exchange rate  [ as in 22/09/2022 corresponding to USD ] which will be displayed as initial balance
 
-Build:
+# Build:
 
   Go to Project directory where pom.xml is present and run below command 
   
   mvn install 
 
-Run Application :
+# Run Application :
   
   Go to <Project Home>\target Directory and run the application by command 
   
   java -jar HsbcAssignment-0.0.1-SNAPSHOT.jar
   
-Known Issues:
+# Known Issues:
