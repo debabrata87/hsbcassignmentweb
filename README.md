@@ -1,10 +1,10 @@
 # HSBC Multi Currency Payment App
-HSBC Multi currency Payment application with command line interface
+HSBC Multi currency Payment application with Web interface
 
 High Level Requirement :
 
-  Command Line Interface to display Multi Currency Balance and Accept Payment and display Balance After processing Payment
-  Programmes continue to run Untill user input "quit"
+  Web application to display Multi Currency Balance and Accept Payment and display Balance After processing Payment
+  
 
 GIT URL 
   
@@ -20,7 +20,7 @@ Tools Used for development
 
 Application Type:
   
-  Spring boot Starter Project
+  Spring boot Web Appliction
 
 Build Tool:
 
@@ -28,9 +28,12 @@ Build Tool:
 
 Depenency :
 
-   1- Spring boot starter depenpency 
+   1- Spring boot Web application 
    2- H2 
    3- JPA
+   4- Thymeleaf 
+   5- HTML
+   
 
 Data Setup and Confiuration :
 
