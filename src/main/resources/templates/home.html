@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <!-- link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style type="text/css">
+    label {
+        display: inline-block;
+        width: 300px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+        margin: 10px;
+    }
+    input[type=radio] {
+        margin-left: 45px;
+    }
+    input[type=checkbox] {
+        margin-right: 190px;
+    }  
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+  </style>
+    
+    <title>HSBC Payment Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+  </head>
+
+  <body>
+  
+    <label>Welcome to HSBC Payment Site</label>
+   
+    <form th:action="@{/balance}" method="post" th:object="${payment}">
+                        <td>
+                            <!--Here is the Problem. How do i return one user from the list?-->
+                            <tr>
+                            	<input  id="currency" th:value="${curreny}" required type="text" th:field="*{currency}" /> Currency </br>
+                            </tr>
+                            <tr>
+                            	<input id="amount"  th:value="${amount}" required type="text" th:field="*{amount}" /> Amount </br>
+                            </tr>
+                            <tr>
+                            	<button type="submit">Submit</button>
+                            </tr>
+                        </td>
+     </form>
+   
+    </br>
+    <div>
+   		 <div th:if="${session.message!= null }">
+   		 	<div class="alert alert-danger" role="alert" th:text="${perror}" th:if="${perror}"></div>
+   		 	<!--th:block th:inline="text"> [[${#session.removeAttribute('message')}]]</th:block-->
+   		 </div>
+   		 
+   		 <div th:if="${session.message==null}">
+   		 	<div class="alert alert-primary" role="alert" th:text="${psuccess}" th:if="${success}"></div>
+		  </div>	
+    </div>
+    </br>
+   
+    
+    <table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Currency</th>
+	      <th scope="col">Balance</th>
+	      <th scope="col">USD Balance</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    
+	      <tr th:each="b : ${balance}">
+	      				<td th:text="${b.bid}"></td>
+	                    <td th:text="${b.currency}"></td>
+	                    <td th:text="${b.balance}"></td>
+	                    <td th:text="${#numbers.formatDecimal(b.balance*b.exchangerate, 1, 'DEFAULT', 2, 'DEFAULT')}"></td>
+	      </tr>
+	          
+	  </tbody>
+	</table>
+    
+  </body>
+
+</html>
