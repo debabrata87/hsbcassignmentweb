@@ -29,9 +29,13 @@ HSBC Multi currency Payment application with Web interface
 # Depenency :
 
    1- Spring boot Web application 
-   2- H2 
+   
+   2- H2
+   
    3- JPA
+   
    4- Thymeleaf 
+   
    5- HTML
    
 
