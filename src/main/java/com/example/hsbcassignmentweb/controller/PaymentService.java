@@ -60,16 +60,24 @@ public class PaymentService {
 			//return "home";
 		}
 		
-		
-
-		
-		
 		List<Balance> list = repo.findByCurrency(pm.getCurrency().trim());
 
 		if (list != null && !list.isEmpty()) {
 			Balance b = list.get(0);
-			b.setBalance(b.getBalance() - Double.parseDouble(pm.getAmount()));
-			repo.save(b);
+			
+			
+			if(b.getBalance()-Double.parseDouble(pm.getAmount()) >= 0) {
+ 	    		b.setBalance(b.getBalance()-Double.parseDouble(pm.getAmount()));
+ 	    		repo.save(b);
+ 	    	}
+ 	    	else {
+ 	    		System.out.println("\n Credit Balance Insufficient   : " +(pm.getCurrency()==null ?" No Input ": pm.getCurrency().trim()) +" Balance : "+ b.getBalance() + " Payment : " +pm.getAmount());
+ 	    		session.setAttribute("message", "Payment invalid ");
+ 				
+ 				redirAttrs.addFlashAttribute("perror", "Credit Balance Insufficient   :" +(pm.getCurrency()==null ?" No Input ": pm.getCurrency().trim()) +" Balance : "+ b.getBalance() + " Payment : " +pm.getAmount());
+ 				return "redirect:/home/";
+ 				
+ 	    	}
 
 		}
 		else {
@@ -112,9 +120,8 @@ public class PaymentService {
 
 		redirAttrs.addFlashAttribute("psuccess", "Everything went just fine.");
 		
-		
-		//return "redirect:/home/";
-		return "home";
+		return "redirect:/home/";
+		//return "home";
 	}
 
 	public boolean isNumeric(String str) {
