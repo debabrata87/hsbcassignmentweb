@@ -53,6 +53,6 @@ HSBC Multi currency Payment application with Web interface
   
   Go to <Project Home>\target Directory and run the application by command 
   
-  java -jar HsbcAssignment-0.0.1-SNAPSHOT.jar
+  java -jar hsbcassignmentweb-0.0.1-SNAPSHOT.jar
   
 # Known Issues:
