@@ -8,7 +8,7 @@ HSBC Multi currency Payment application with Web interface
 
 # GIT URL 
   
-  -
+  -https://github.com/debabrata87/hsbcassignmentweb.git
 
 # Tools Used for development 
 
